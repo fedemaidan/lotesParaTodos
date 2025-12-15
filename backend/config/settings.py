@@ -33,9 +33,11 @@ DEBUG = os.getenv('DEBUG', 'False').lower() in ('true', '1', 'yes')
 
 # Hosts permitidos
 ALLOWED_HOSTS_ENV = os.getenv('ALLOWED_HOSTS', '')
-ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_ENV.split(',') if host.strip()] if ALLOWED_HOSTS_ENV else ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_ENV.split(',') if host.strip()] if ALLOWED_HOSTS_ENV else ['localhost', '127.0.0.1', "lotesparatodos.sorbydata.com"]
 
-
+CSRF_TRUSTED_ORIGINS = [
+  "https://lotesparatodos.sorbydata.com",
+]
 # Application definition
 
 INSTALLED_APPS = [
